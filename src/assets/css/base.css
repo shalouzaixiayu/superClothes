@@ -1,0 +1,49 @@
+@import './normalize.css';
+
+:root {
+  /* 自定义css变量 */
+  --color-text: #666;
+  --color-high-text: #ff5777;
+  --color-tint:#ff8198;
+  --color-background: #fff;
+  --font-size:14px;
+  --line-hight:1.5;
+}
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 让盒子的宽度包含border padding  */
+}
+body{
+  font-family: sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* 适配苹果浏览器 */
+  background-color: var(--color-background);
+  color:var(--color-text);
+  width: 100vw;
+  /* vw 表示宽度的1%  vh 表示高度的1% */
+}
+a{
+  color:var(--color-text);
+  text-decoration: none;
+}
+.clear-fix::after{
+  clear: both;
+  content:'';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  /* 元素不可见，但是依然占有空间， 不同于display：none 不占用空间 */
+}
+.clear-fix{
+  zoom: 1;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
